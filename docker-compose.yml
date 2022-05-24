@@ -10,7 +10,7 @@ services:
     user: 1000:1000
     entrypoint:
       - /usr/local/bin/node
-      - index.js
+      - index.cjs
   node:
     image: node:16
     working_dir: /src

@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/channel', (req, res) => {
-  res.send(info()); // 呼び出せない
+  res.send(info());
   console.log(info());
 })
 
@@ -25,11 +25,11 @@ const payload = {
   httpsAgent: 'agent'
 }
 
-function info() {
+const info = () => {
   ytch.getChannelVideos(payload).then((response) => {
     if (!response.alertMessage) {
+      console.log(response);
       return response;
-      //console.log(response)
     } else {
       //console.log('Channel could not be found.')
       // throw response.alertMessage

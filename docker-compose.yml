@@ -1,0 +1,13 @@
+version: "3"
+services:
+  node:
+    image: node:16
+    working_dir: /src
+    ports: 
+      - 32768:32768
+    volumes:
+      - ./src:/src:cached
+    user: 1000:1000
+    entrypoint:
+      - /usr/local/bin/node
+      - index.js

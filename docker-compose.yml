@@ -1,6 +1,6 @@
 version: "3"
 services:
-  node:
+  server:
     image: node:16
     working_dir: /src
     ports: 
@@ -11,3 +11,9 @@ services:
     entrypoint:
       - /usr/local/bin/node
       - index.js
+  node:
+    image: node:16
+    working_dir: /src
+    volumes:
+      - ./src:/src:cached
+    user: 1000:1000

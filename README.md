@@ -18,11 +18,11 @@
 * レスポンスの内容等は、ライブラリの [yt-channel-info](https://github.com/FreeTubeApp/yt-channel-info) を参照
 
 #### ビデオ一覧(最新順 30件)
-https://example.com/channel/HikakinTV/videos
+https://example.com:32768/channel/HikakinTV/videos
 
 #### チャンネル情報
-https://example.com/channel/HikakinTV/info
+https://example.com:32768/channel/HikakinTV/info
 
 #### チャンネル統計
-https://example.com/channel/HikakinTV/stats
+https://example.com:32768/channel/HikakinTV/stats
 

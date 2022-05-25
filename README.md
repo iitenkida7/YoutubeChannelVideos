@@ -34,7 +34,7 @@ http://localhost:32768/channel/HikakinTV/stats
 git clone git@github.com:iitenkida7/YoutubeChannelVideos.git
 cd YoutubeChannelVideos
 
-docker-compose run --rm node npm install
+docker-compose run --rm node yarn install
 ```
 
 ### 実行例

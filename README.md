@@ -18,11 +18,31 @@
 * レスポンスの内容等は、ライブラリの [yt-channel-info](https://github.com/FreeTubeApp/yt-channel-info) を参照
 
 #### ビデオ一覧(最新順 30件)
-https://example.com:32768/channel/HikakinTV/videos
+http://localhost:32768/channel/HikakinTV/videos
 
 #### チャンネル情報
-https://example.com:32768/channel/HikakinTV/info
+http://localhost:32768/channel/HikakinTV/info
 
 #### チャンネル統計
-https://example.com:32768/channel/HikakinTV/stats
+http://localhost:32768/channel/HikakinTV/stats
+
+## 開発環境構築例
+
+### 初回実行
+
+```
+git clone git@github.com:iitenkida7/YoutubeChannelVideos.git
+cd YoutubeChannelVideos
+
+docker-compose run --rm node npm install
+```
+
+### 実行例
+
+```
+docker-compose up
+```
+
+
+
 

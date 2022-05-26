@@ -13,6 +13,9 @@ app.get('/', (req, res) => {
 app.get('/channel/:channelId/info', (req, res, next) => {
   (async () => {
     const result = await channelInfo(req.params.channelId);
+    if (!result) {
+      res.status(404).json("404 Not Found");
+    }
     res.json(result);
   })().catch(next);
 });
@@ -20,6 +23,9 @@ app.get('/channel/:channelId/info', (req, res, next) => {
 app.get('/channel/:channelId/videos', (req, res, next) => {
   (async () => {
     const result = await channelVideos(req.params.channelId);
+    if (!result) {
+      res.status(404).json("404 Not Found");
+    }
     res.json(result);
   })().catch(next);
 });
@@ -27,6 +33,9 @@ app.get('/channel/:channelId/videos', (req, res, next) => {
 app.get('/channel/:channelId/stats', (req, res, next) => {
   (async () => {
     const result = await channelStats(req.params.channelId);
+    if (!result) {
+      res.status(404).json("404 Not Found");
+    }
     res.json(result);
   })().catch(next);
 });
@@ -38,55 +47,59 @@ app.use((req, res, next) => {
 
 function channelInfo(channelId) {
   const payload = {
-    channelId: channelId,
+    channelId: encodeURI(channelId),
     channelIdType: 0,
-    sortBy: 'newest',
-    httpsAgent: 'agent'
   }
 
+  console.log(payload);
+
   return ytch.getChannelInfo(payload).then((response) => {
+
+    console.log(response.alertMessage);
     if (!response.alertMessage) {
       return response;
     } else {
-      return 'Channel could not be found.';
+      return false;
     }
   }).catch((err) => {
     console.log(err)
+    return false;
   })
 }
 
 function channelVideos(channelId) {
   const payload = {
-    channelId: channelId,
+    channelId: encodeURI(channelId),
     channelIdType: 0,
-    httpsAgent: 'agent'
+    sortBy: 'newest',
   }
 
   return ytch.getChannelVideos(payload).then((response) => {
     if (!response.alertMessage) {
       return response;
     } else {
-      return 'Channel could not be found.';
+      return false;
     }
   }).catch((err) => {
     console.log(err)
+    return false;
   })
 }
 
 function channelStats(channelId) {
   const payload = {
-    channelId: channelId,
+    channelId: encodeURI(channelId),
   }
 
   return ytch.getChannelStats(payload).then((response) => {
     if (!response.alertMessage) {
       return response;
     } else {
-      return 'Channel could not be found.';
-      // throw response.alertMessage
+      return false;
     }
   }).catch((err) => {
     console.log(err)
+    return false;
   })
 }
 

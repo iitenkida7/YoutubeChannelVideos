@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 
 function channelInfo(channelId) {
   const payload = {
-    channelId: fixedEncodeURIComponent(channelId),
+    channelId: encodeURIComponent(channelId),
     channelIdType: 0,
   }
 
@@ -69,7 +69,7 @@ function channelInfo(channelId) {
 
 function channelVideos(channelId) {
   const payload = {
-    channelId: fixedEncodeURIComponent(channelId),
+    channelId: encodeURIComponent(channelId),
     channelIdType: 0,
     sortBy: 'newest',
   }
@@ -88,7 +88,7 @@ function channelVideos(channelId) {
 
 function channelStats(channelId) {
   const payload = {
-    channelId: fixedEncodeURIComponent(channelId),
+    channelId: encodeURIComponent(channelId),
   }
 
   return ytch.getChannelStats(payload).then((response) => {
@@ -103,9 +103,4 @@ function channelStats(channelId) {
   })
 }
 
-function fixedEncodeURIComponent(str) {
-  return encodeURIComponent(str).replace(/[.-]/g, function(c) {
-    return '%' + c.charCodeAt(0).toString(16);
-  });
-}
 

@@ -30,6 +30,17 @@ app.get('/channel/:channelId/videos', (req, res, next) => {
   })().catch(next);
 });
 
+
+app.get('/channel/:channelId/videos/:continuation', (req, res, next) => {
+  (async () => {
+    const result = await channelVideosMore(req.params.continuation);
+    if (!result) {
+      res.status(404).json("404 Not Found");
+    }
+    res.json(result);
+  })().catch(next);
+});
+
 app.get('/channel/:channelId/stats', (req, res, next) => {
   (async () => {
     const result = await channelStats(req.params.channelId);
@@ -75,6 +86,24 @@ function channelVideos(channelId) {
   }
 
   return ytch.getChannelVideos(payload).then((response) => {
+    if (!response.alertMessage) {
+      return response;
+    } else {
+      return false;
+    }
+  }).catch((err) => {
+    console.log(err)
+    return false;
+  })
+}
+
+
+function channelVideosMore(continuation) {
+  const payload = {
+    continuation: continuation,
+  }
+
+  return ytch.getChannelVideosMore(payload).then((response) => {
     if (!response.alertMessage) {
       return response;
     } else {

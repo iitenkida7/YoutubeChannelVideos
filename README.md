@@ -4,7 +4,6 @@
 * youtubeのチャンネルに登録されている動画リストを取得するAPI実装（＆チャンネル情報）
 * youtube公式APIだと ビデオリスト取得にたくさんクォータを使ってしまって使い物にならないので、
 * yt-channel-info という ライブラリを利用し、 APIのインターフェイスを Expressで実装
-* 今のところは、とても簡易実装で最新の動画のみの取得。yt-channel-info自体はそれ以上取得可能。
 * 利用は自己責任。
 
 ## 技術
@@ -20,6 +19,9 @@
 #### ビデオ一覧(最新順 30件)
 http://localhost:32768/channel/HikakinTV/videos
 
+#### ビデオ一覧(次の 30件)
+http://localhost:32768/channel/HikakinTV/videos/{continuation}
+※ 直前の responseの continuation 値
 #### チャンネル情報
 http://localhost:32768/channel/HikakinTV/info
 

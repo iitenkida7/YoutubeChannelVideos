@@ -11,6 +11,8 @@ http://localhost:32768/channel/UCoVEouSuvFoP5GeVfiBeRLg/info
 http://localhost:32768/channel/UC9zY_E8mcAo_Oq772LEZq8Q/info
 http://localhost:32768/channel/UCqm3BQLlJfvkTsX_hvm0UmA/info
 http://localhost:32768/channel/UC9zY_E8mcAo_Oq772LEZq8Q/info
+http://localhost:32768/channel/UCGCZAYq5Xxojl_tSXcVJhiQ/info
+http://localhost:32768/channel/@HyakumantenbaraSalome/info
 
 http://localhost:32768/channel/SeikinTV/videos
 http://localhost:32768/channel/UCCLnJzwda_Kcdkok3et7n0A/videos
@@ -25,6 +27,8 @@ http://localhost:32768/channel/UCoVEouSuvFoP5GeVfiBeRLg/videos
 http://localhost:32768/channel/UC9zY_E8mcAo_Oq772LEZq8Q/videos
 http://localhost:32768/channel/UCqm3BQLlJfvkTsX_hvm0UmA/videos
 http://localhost:32768/channel/UC9zY_E8mcAo_Oq772LEZq8Q/videos
+http://localhost:32768/channel/UCGCZAYq5Xxojl_tSXcVJhiQ/videos
+http://localhost:32768/channel/@HyakumantenbaraSalome/videos
 
 http://localhost:32768/channel/SeikinTV/stats
 http://localhost:32768/channel/UCCLnJzwda_Kcdkok3et7n0A/stats
@@ -39,3 +43,5 @@ http://localhost:32768/channel/UCoVEouSuvFoP5GeVfiBeRLg/stats
 http://localhost:32768/channel/UC9zY_E8mcAo_Oq772LEZq8Q/stats
 http://localhost:32768/channel/UCqm3BQLlJfvkTsX_hvm0UmA/stats
 http://localhost:32768/channel/UC9zY_E8mcAo_Oq772LEZq8Q/stats
+http://localhost:32768/channel/UCGCZAYq5Xxojl_tSXcVJhiQ/stats
+http://localhost:32768/channel/@HyakumantenbaraSalome/stats
